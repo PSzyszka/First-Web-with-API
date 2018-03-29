@@ -1,0 +1,20 @@
+<h2>List of all campaigns</h2>
+<table class='table' style='width:100%; text-align: center;'>
+  <thead class='thead-dark'>
+    <tr>
+      <th scope='col'></th>
+      <th scope='col'>Title</th>
+      <th scope='col' scope='col'>Id</th>
+      <th scope='col' scope='col'></th>
+    </tr>
+  </thead>
+  <% @campains.each_with_index do |campain, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= campain.title %></td>
+      <td><%= campain.id %></td>
+      <td><%= link_to 'Details', campain_path(campain.id) %></td>
+    </tr>
+  <% end %>
+</table>
+

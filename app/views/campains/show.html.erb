@@ -1,0 +1,34 @@
+<h5 class="header">View keyword statistics for <%= @current_time %></h5>
+<div class="to-right">
+  <%= select_tag "time_period", options_for_select([["1 week", :one_week], ["2 weeks", :two_weeks], ["1 month", :one_month]], @period) %>
+</div>
+
+<table class='table' style='width:100%; text-align: center;'>
+  <thead class='thead-dark'>
+    <tr>
+      <th scope='col'>Keyword</th>
+      <th scope='col'>Best ranking</th>
+      <th scope='col' scope='col'>Date of occurrnce</th>
+      <th scope='col'>Worst ranking</th>
+      <th scope='col'>Date of occurrnce</th>
+      <th scope='col'>Mean ranking</th>
+      <th scope='col'>Groups</th>
+    </tr>
+  </thead>
+
+  <% @keywords.each do |keyword| %>
+    <tr>
+      <td><%= keyword.name %></td>
+      <td><%= keyword.best_position %></td>
+      <td><%= keyword.best_position_date %></td>
+      <td><%= keyword.worst_position %></td>
+      <td><%= keyword.worst_position_date %></td>
+      <td><%= keyword.average_of_positions %></td>
+      <td>
+        <% keyword.groups.each do |group| %>
+          <%= group %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
