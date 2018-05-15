@@ -16,6 +16,9 @@ gem 'rest-client'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'loofah', '~> 2.2.1'
+gem 'nokogiri', '~> 1.8.2'
+gem 'rails-html-sanitizer', '~> 1.0.4'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
